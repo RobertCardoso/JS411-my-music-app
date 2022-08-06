@@ -22,6 +22,10 @@ class App extends Component {
     }
   }
 
+  login = () => {
+    this.setState({loggedIn: true})
+  }
+
   render() {
     return (
       <div className="App">
@@ -44,7 +48,10 @@ class App extends Component {
                 <Button color="inherit">Login</Button>
               </Toolbar>
             </AppBar>
-          </Box> : <Box sx={{ flexGrow: 1}}>
+            <br/>
+            <OutlinedCard />
+          </Box> 
+          : <Box sx={{ flexGrow: 1}}>
             <AppBar position="static" sx={{backgroundColor:"black"}}>
               <Toolbar>
                 <IconButton
@@ -62,8 +69,8 @@ class App extends Component {
                 <Button color="inherit">Login</Button>
               </Toolbar>
             </AppBar>
-            <div className='login'><LoginCreate></LoginCreate></div>
-            <OutlinedCard />
+            <div className='login'><LoginCreate login={this.login}></LoginCreate></div>
+            
           </Box> 
           
           }

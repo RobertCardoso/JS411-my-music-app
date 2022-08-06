@@ -13,7 +13,7 @@ import Stack from '@mui/material/Stack';
 
 
 
-export default function LoginCreate() {
+export default function LoginCreate(props) {
 
   return (
     <div> 
@@ -31,7 +31,7 @@ export default function LoginCreate() {
       <TextField variant="filled" label="Password" type="password" />
 
       <Stack className='log1' direction="row"  justifyContent="center" spacing={2}  >
-      <Button variant="contained" sx={{backgroundColor:"black"}} >Login</Button>
+      <Button variant="contained" sx={{backgroundColor:"black"}} onClick={props.login} >Login</Button>
       <Button variant="contained" sx={{backgroundColor:"black"}}>Create Account</Button>
       
     </Stack>
